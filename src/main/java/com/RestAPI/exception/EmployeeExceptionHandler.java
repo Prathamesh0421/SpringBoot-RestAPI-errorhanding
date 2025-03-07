@@ -25,7 +25,7 @@ public class EmployeeExceptionHandler {
                 noEmployeesFoundException.getCause(),
                 HttpStatus.NOT_FOUND
         );
-        return new ResponseEntity<>(employeeException, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(employeeException, HttpStatus.valueOf(478));
     }
 
     @ExceptionHandler(Exception.class)
