@@ -36,7 +36,7 @@ public class EmployeeController {
     @PostMapping
     public ResponseEntity<Object> createEmployee(@RequestBody Employee employee) {
         employeeService.createEmployee(employee);
-        return ResponseHandler.responseBuilder("Employee created successfully", HttpStatus.CREATED, employee);
+        return ResponseHandler.responseBuilder("Employee created successfully", HttpStatus.OK, employee);
     }
 
     @PutMapping
@@ -48,7 +48,7 @@ public class EmployeeController {
     @DeleteMapping("{empId}")
     public ResponseEntity<Object> deleteEmployee(@PathVariable("empId") Integer empId) {
         employeeService.deleteEmployee(empId);
-        return ResponseHandler.responseBuilder("Employee deleted successfully", HttpStatus.OK, null);
+        return ResponseHandler.responseBuilder("Employee deleted successfully", HttpStatus.CREATED, null);
     }
 
 }
